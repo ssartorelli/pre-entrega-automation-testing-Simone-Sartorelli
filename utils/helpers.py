@@ -27,11 +27,11 @@ def login_saucedemo(driver):
     
     driver.get(URL)
 
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "user-name"))).send_keys(USERNAME)
-    #driver.find_element(By.NAME,"user-name").send_keys(USERNAME)
+    #WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.NAME, "user-name"))).send_keys(USERNAME)
+    driver.find_element(By.NAME,"user-name").send_keys(USERNAME)
     driver.find_element(By.NAME, "password").send_keys(PASSWORD)
     driver.find_element(By.ID, "login-button").click()
-    #time.sleep(5)
+    time.sleep(7)
     
 
 

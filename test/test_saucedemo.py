@@ -17,9 +17,9 @@ def driver():
 def test_login(driver):
     login_saucedemo(driver)
     assert "/inventory.html" in driver.current_url
+    driver.save_screenshot("login.png")
     titulo = driver.find_element(By.CSS_SELECTOR,"div.header_secondary_container .title").text
     assert titulo == "Products"
-    driver.save_screenshot("login.png")
 
 def test_catalogo(driver):
     login_saucedemo(driver)
