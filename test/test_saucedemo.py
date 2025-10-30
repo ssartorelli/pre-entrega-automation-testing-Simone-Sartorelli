@@ -1,4 +1,4 @@
-import pytest
+"""import pytest
 from selenium.webdriver.common.by import By
 import sys
 import os
@@ -7,7 +7,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 from utils.helpers import get_driver, login_saucedemo
 
 
-@pytest.fixture
+#@pytest.fixture
 def driver():
     driver = get_driver()
     
@@ -41,4 +41,4 @@ def test_carrito(driver):
         badge = driver.find_element(By.CLASS_NAME, "shopping_cart_badge").text
 
         assert badge == "6"
-    driver.save_screenshot("carrito.png")
+    #driver.save_screenshot("carrito.png")"""

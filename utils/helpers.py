@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.service import Service
 import time
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+import os
 URL = "https://www.saucedemo.com/"
 USERNAME = "standard_user"
 PASSWORD = "secret_sauce"
@@ -23,7 +23,7 @@ def get_driver():
     return driver
     #driver = webdriver.Chrome(service=service, options=options)
 
-def login_saucedemo(driver):
+#def login_saucedemo(driver):
     
     driver.get(URL)
 
@@ -34,6 +34,13 @@ def login_saucedemo(driver):
     time.sleep(7)
     
 
+def get_file_path(file_name, folder="data"):
+#Ruta Relativa
+    current_file = os.path.dirname(__file__) #EL ARCHIVO DONDE ESTOY
+    file_path = os.path.join(current_file,"..",folder,file_name)
+
+    #../data/data_login.csv=> rel
+    return os.path.abspath(file_path)
 
 
 
